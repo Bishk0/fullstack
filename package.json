@@ -1,0 +1,27 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "description": "fullstack with angular and nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bishk0/fullstack.git"
+  },
+  "keywords": [
+    "fullstack",
+    "nodejs",
+    "angular"
+  ],
+  "author": "Yura Bishko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bishk0/fullstack/issues"
+  },
+  "homepage": "https://github.com/Bishk0/fullstack#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
