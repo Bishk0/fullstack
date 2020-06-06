@@ -38,7 +38,7 @@
   <div class="card-action">
     <button
       type="submit"
-      [disabled]="form.invalid"
+      [disabled]="form.invalid || form.disabled"
       class="modal-action btn waves-effect">Увійти</button>
   </div>
 </form>
