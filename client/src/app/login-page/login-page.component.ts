@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {AuthService} from "../shared/services/auth.service";
 import {ActivatedRoute, Params, Router} from "@angular/router";
+import {MaterialService} from "../shared/classes/material.service";
 
 @Component({
   selector: 'app-login-page',
@@ -27,9 +28,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
     this.route.queryParams.subscribe((params: Params) => {
       if (params['registered']) {
-
+        MaterialService.toast('Тепер ви можете зайти в систему використовуючи свої данні.');
       } else if (params['accessDenied']) {
-
+        MaterialService.toast('Для початку авторизуйтесь в системі.');
       }
     });
   }
@@ -45,7 +46,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.auth.login(this.form.value).subscribe(
       () => console.log('123123'),
       error => {
-        console.warn(error);
+        MaterialService.toast(error.error.message);
         this.form.enable();
       });
   }
