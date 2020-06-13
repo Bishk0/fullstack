@@ -5,7 +5,10 @@
     {{ isNew ? 'Добавити' : 'Редарувати' }} категорію
   </h4>
   <span>
-    <button class="btn btn-small red">
+    <button
+      *ngIf="!isNew"
+      class="btn btn-small red"
+      (click)="deleteCategory()">
       <i class="material-icons">delete</i>
     </button>
   </span>
@@ -49,7 +52,7 @@
         type="submit"
         [disabled]="form.invalid || form.disabled"
         class="waves-effect waves-light btn">
-        Сохранити зміни
+        Зберегти зміни
       </button>
     </div>
   </form>
