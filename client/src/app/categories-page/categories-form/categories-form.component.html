@@ -61,5 +61,9 @@
     <img class="responsive-img h200" alt="photo" [src]="imagePreview" *ngIf="imagePreview">
   </div>
 </div>
-<app-positions-form></app-positions-form>
+<app-positions-form
+  *ngIf="category?._id"
+  [categoryId]="category._id">
+
+</app-positions-form>
 
