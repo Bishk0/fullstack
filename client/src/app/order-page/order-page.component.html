@@ -1,21 +1,26 @@
 <div class="page-title">
-  <h4>Заказ</h4>
-  <button class="waves-effect btn grey darken-1 modal-trigger" data-target="explore-order">
-    Завершить
+  <h4 *ngIf="isRoot">Заказ</h4>
+  <h4 *ngIf="!isRoot">
+    <a routerLink="/order">Заказ</a>
+    <i class="material-icons">keyboard_arrow_right</i>
+    Добавити продукцію
+  </h4>
+  <button class="waves-effect btn grey darken-1" (click)="open()">
+    Закінчити
   </button>
 </div>
 
 <router-outlet></router-outlet>
 
-<div id="explore-order" class="modal modal-fixed-footer">
+<div #modal class="modal modal-fixed-footer">
   <div class="modal-content">
-    <h4 class="mb1">Ваш заказ</h4>
+    <h4 class="mb1">Ваше замовлення</h4>
     <table class="highlight">
       <thead>
       <tr>
-        <th>Название</th>
-        <th>Количество</th>
-        <th>Цена</th>
+        <th>Назва</th>
+        <th>Кількість</th>
+        <th>Ціна</th>
         <th></th>
       </tr>
       </thead>
@@ -43,11 +48,11 @@
       </tbody>
     </table>
     <div class="order-summary">
-      <p>Общая стоимость <strong>22 231 руб.</strong></p>
+      <p>Загальна вартість <strong>22 231 грн.</strong></p>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action waves-effect waves-black btn-flat">Отмена</a>
-    <button class="modal-action btn waves-effect">Подтвердить</button>
+    <button class="modal-action waves-effect waves-black btn-flat" (click)="cancel()">Відміна</button>
+    <button class="modal-action btn waves-effect" (click)="submit()">Підтвердити</button>
   </div>
 </div>
