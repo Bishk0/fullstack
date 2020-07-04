@@ -20,6 +20,8 @@ import { CategoriesFormComponent } from './categories-page/categories-form/categ
 import { PositionsFormComponent } from './categories-page/categories-form/positions-form/positions-form.component';
 import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component';
 import { OrderCategoriesComponent } from './order-page/order-categories/order-categories.component';
+import { HistoryListComponent } from './history-page/history-list/history-list.component';
+import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { OrderCategoriesComponent } from './order-page/order-categories/order-ca
     CategoriesFormComponent,
     PositionsFormComponent,
     OrderPositionsComponent,
-    OrderCategoriesComponent
+    OrderCategoriesComponent,
+    HistoryListComponent,
+    HistoryFilterComponent
   ],
   imports: [
     BrowserModule,
