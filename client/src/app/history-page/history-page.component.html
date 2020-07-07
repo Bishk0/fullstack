@@ -3,17 +3,18 @@
   <button
     (click)="isFilterVisible = !isFilterVisible"
     [ngClass]="{
-    'active': isFilterVisible
+    'active': isFilterVisible,
+    'red': isFiltered()
     }"
     class="btn btn-small"
-    data-tooltip="Открыть фильтр"
+    data-tooltip="Відкрити фільтр"
     data-position="left"
     #tooltip>
     <i class="material-icons">filter_list</i>
   </button>
 </div>
 
-<app-history-filter *ngIf="isFilterVisible"></app-history-filter>
+<app-history-filter *ngIf="isFilterVisible" (onFilter)="applyFilter($event)"></app-history-filter>
 <div *ngIf="!reloading; else reloadingBlock">
   <div *ngIf="orders.length !== 0; else empty">
     <app-history-list [orders]="orders"></app-history-list>
